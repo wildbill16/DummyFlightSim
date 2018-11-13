@@ -292,10 +292,10 @@ void AMyProject12Pawn::MoveRightInput(float Val)
 */
 
 
-void AMyProject12Pawn::StickPitchInput(float Val) //²¢·ÇÊµÊ±µ÷ÓÃ£¬Ö»ÓĞÓĞÊäÈëµÄÊ±ºò²Åµ÷ÓÃ¡£ËùÒÔ»Ø¸ËĞèÒªFLCS
-{
+void AMyProject12Pawn::StickPitchInput(float Val) //å¹¶éå®æ—¶è°ƒç”¨ï¼Œåªæœ‰æœ‰è¾“å…¥çš„æ—¶å€™æ‰è°ƒç”¨ã€‚æ‰€ä»¥å›æ†éœ€è¦FLCS 
+{						// Not used in every Tick. Executed when function call. FLCS recenter the tick
 	//does not automatically return to neutral,0.5 seconds from 0 to 1
-	//²»»ØÖĞ£¬0.5Ãëµ½µ×---Up 1.0, Down-1.0
+	//ä¸å›ä¸­ï¼Œ0.5ç§’åˆ°åº•---Up 1.0, Down-1.0
 	bPitchHasInput = !FMath::IsNearlyEqual(Val, 0.0f);
 	if (bPitchHasInput == false)
 	{
@@ -310,7 +310,7 @@ void AMyProject12Pawn::StickPitchInput(float Val) //²¢·ÇÊµÊ±µ÷ÓÃ£¬Ö»ÓĞÓĞÊäÈëµÄÊ±
 void AMyProject12Pawn::StickRollInput(float Val) 
 {
 	//automatically return to neutral,0.5 seconds from 0 to 1
-	//»ØÖĞ£¬0.5Ãëµ½µ×
+	//å›ä¸­ï¼Œ0.5ç§’åˆ°åº•
 	bRollHasInput=!FMath::IsNearlyEqual(Val, 0.0f);
 	if (bRollHasInput == false)
 	{
@@ -327,7 +327,7 @@ void AMyProject12Pawn::StickRollInput(float Val)
 void AMyProject12Pawn::StickYawInput(float Val) 
 {	//val:0 or 1 in keyboard mode
 	//automatically return to neutral,0.5 seconds from 0 to 1
-	//»ØÖĞ£¬0.5Ãëµ½µ×
+	//å›ä¸­ï¼Œ0.5ç§’åˆ°åº•
 	bYawHasInput = !FMath::IsNearlyEqual(Val, 0.0f);
 
 	// If input is not held down, yaw to neutral
